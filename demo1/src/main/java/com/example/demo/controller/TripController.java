@@ -27,6 +27,7 @@ public class TripController {
 
     @PostMapping("/{tripId}/seat-requests")
     public ResponseEntity<SeatRequestResponseDto> postTrip(@PathVariable Long tripId, @RequestBody @Valid SeatRequestCreateDto seatRequestCreateDto) {
-        seatRequestService.createSeatRequest()
+        SeatRequestResponseDto seatRequestResponseDto =  seatRequestService.createSeatRequest(tripId, seatRequestCreateDto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(seatRequestResponseDto);
     }
 }
