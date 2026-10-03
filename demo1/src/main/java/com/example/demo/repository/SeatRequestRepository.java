@@ -1,4 +1,7 @@
 package com.example.demo.repository;
 
-public interface SeatRequestRepository {
+import com.example.demo.entity.SeatRequest;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface SeatRequestRepository extends JpaRepository<SeatRequest, Long> {
 }
