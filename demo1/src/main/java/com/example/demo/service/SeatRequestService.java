@@ -19,8 +19,8 @@ public class SeatRequestService {
     SeatRequestRepository seatRequestRepository;
     TripRepository tripRepository;
 
-    public SeatRequestResponseDto createSeatRequest(SeatRequestCreateDto seatRequestCreateDto) {
-        Trip trip = tripRepository.findById(seatRequestCreateDto.getTripId())
+    public SeatRequestResponseDto createSeatRequest(Long tripId, SeatRequestCreateDto seatRequestCreateDto) {
+        Trip trip = tripRepository.findById(tripId)
                 .orElseThrow(() -> new TripNotFoundException("The trip was not founded"));
 
         if (trip.getAvailableSeats() == 0) {

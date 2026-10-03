@@ -15,8 +15,6 @@ import java.time.ZonedDateTime;
 @Setter
 public class SeatRequestCreateDto {
     @NotNull
-    private Long tripId;
-    @NotNull
     private Long passengerId;
 
     @NotNull
